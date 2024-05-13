@@ -20,6 +20,14 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dados pessoais:"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:textSize="17sp"
+        />
 
     <EditText
         android:id="@+id/editTextNome"
@@ -40,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
@@ -49,30 +57,18 @@
         android:padding="10dp"
         android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/editTextEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/bg_edit_text"
-        android:ems="10"
-        android:hint="Endereço:"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textSize="24sp" />
+
 
     <EditText
         android:id="@+id/editTextGenero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
-        android:hint="Genero"
+        android:hint="Gênero:"
         android:inputType="text"
         android:padding="10dp"
         android:textSize="24sp" />
@@ -82,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
@@ -96,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
@@ -104,6 +100,81 @@
         android:inputType="text|textPassword"
         android:padding="10dp"
         android:textSize="24sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dados do endereço:"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:textSize="17sp"
+        />
+    <EditText
+        android:id="@+id/editTextCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Cidade:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/editTextCep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Estado:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/editTextEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Estado:"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/editTextRua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Rua:"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextNumero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_edit_text"
+        android:ems="10"
+        android:hint="Numero:"
+        android:inputType="text|textPassword"
+        android:padding="10dp"
+        android:textSize="24sp" />
+
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -138,6 +209,7 @@
         </LinearLayout>
 
     </RadioGroup>
+
 
     <Button
         android:id="@+id/btSalvar"

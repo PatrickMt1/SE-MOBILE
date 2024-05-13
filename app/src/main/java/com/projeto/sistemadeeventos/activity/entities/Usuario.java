@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
     private String nome;
     private String email;
-    private String endereco;
     private String genero;
     private String telefone;
     private String senha;
@@ -14,11 +13,10 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nome, String email, String endereco, String genero, String telefone, String senha,
+    public Usuario(String nome, String email, String genero, String telefone, String senha,
                    String tipoConta) {
         this.nome = nome;
         this.email = email;
-        this.endereco = endereco;
         this.genero = genero;
         this.telefone = telefone;
         this.senha = senha;
@@ -40,14 +38,6 @@ public class Usuario implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public String getGenero() {

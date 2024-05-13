@@ -34,7 +34,7 @@ import com.projeto.sistemadeeventos.activity.entities.Usuario;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class CadastrarUsuarioActivity extends AppCompatActivity {
-    private EditText textNome, textEndereco, textGenero, textTelefone, textEmail, textSenha;
+    private EditText textNome, textGenero, textTelefone, textEmail, textSenha;
     private RadioButton radioAdmin, radioCliente;
     private Usuario user;
     private Button btSalvar, btCancelar;
@@ -66,7 +66,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nome = textNome.getText().toString();
-                String endereco = textEndereco.getText().toString();
                 String genero = textGenero.getText().toString();
                 String telefone = textTelefone.getText().toString();
                 String email = textEmail.getText().toString();
@@ -80,9 +79,9 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 }
 
                 String criptSenha = BCrypt.withDefaults().hashToString(12, senha.toCharArray());
-                user = new Usuario(nome, email, endereco, genero, telefone, criptSenha,tipoConta);
+                user = new Usuario(nome, email, genero, telefone, criptSenha,tipoConta);
 
-                if (nome.isEmpty() || endereco.isEmpty() || telefone.isEmpty() || genero.isEmpty() || email.isEmpty()
+                if (nome.isEmpty() || telefone.isEmpty() || genero.isEmpty() || email.isEmpty()
                         || senha.isEmpty() || tipoConta.isEmpty()) {
 
                     Toast.makeText(CadastrarUsuarioActivity.this,
@@ -98,7 +97,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
     private void iniciarComponentes() {
         textNome = (EditText) findViewById(R.id.editTextNome);
-        textEndereco = (EditText) findViewById(R.id.editTextEndereco);
         textGenero = (EditText) findViewById((R.id.editTextGenero));
         textTelefone = (EditText) findViewById(R.id.editTextTelefone);
         textEmail = (EditText) findViewById(R.id.editTextEmail);
