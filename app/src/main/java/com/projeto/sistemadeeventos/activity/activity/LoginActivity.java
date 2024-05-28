@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button btLogin;
     private TextView textCadastrar;
     private String tipoConta;
-    private FirebaseFirestore firestore = FirebaseConfig.getFirestore();
-    private FirebaseAuth auth = FirebaseConfig.getAuth();
+    private FirebaseFirestore firestore;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,10 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
         iniciarComponente();
+        firestore = FirebaseConfig.getFirestore();
+        auth = FirebaseConfig.getAuth();
+        auth.signOut();
+        verificarUsuarioLogado();
 
         textCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,37 +62,34 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String email = textEmail.getText().toString();
                 String senha = textSenha.getText().toString();
 
                 if (!email.isEmpty() && !senha.isEmpty()) {
-                    auth.signInWithEmailAndPassword(email, senha)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    Toast.makeText(LoginActivity.this,
-                                            "Logado com sucesso!", Toast.LENGTH_LONG).show();
-                                    recuperarUsuarioLogado();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d("error", "Erro ao efetuar login" + e.getMessage());
-                                    Toast.makeText(LoginActivity.this,
-                                            "Email ou Senha Inválido!", Toast.LENGTH_LONG).show();
-                                }
-                            });
 
+                    auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Login Efetuado com Sucesso!", Toast.LENGTH_LONG).show();
+                                recuperarUsuarioLogado();
+
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Error ao Efetuar Login!", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
                 } else {
+
                     if (email.isEmpty()) {
                         Toast.makeText(LoginActivity.this,
-                                "Insira o email!", Toast.LENGTH_LONG).show();
+                                "Informer o Email", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(LoginActivity.this,
-                                "Insira a Senha!", Toast.LENGTH_LONG).show();
+                                "Informer a Senha", Toast.LENGTH_LONG).show();
                     }
                 }
-
             }
         });
     }
@@ -100,6 +101,22 @@ public class LoginActivity extends AppCompatActivity {
         textCadastrar = (TextView) findViewById(R.id.textCadastrar);
 
     }
+
+    private void verificarUsuarioLogado() {
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            abrirTelaHome(tipoConta);
+        }
+    }
+
+    private void abrirTelaHome(String tipoConta) {
+        if ("usuario".equals(tipoConta)) {
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        } else {
+            startActivity(new Intent(LoginActivity.this, AdministradorActivity.class));
+        }
+    }
+
     private void recuperarUsuarioLogado() {
         String userId = FirebaseConfig.getIdUsuario();
         firestore.collection("usuarios")
@@ -122,13 +139,5 @@ public class LoginActivity extends AppCompatActivity {
 
     private void abrirTelaCadastro() {
         startActivity(new Intent(LoginActivity.this, CadastrarUsuarioActivity.class));
-    }
-
-    private void abrirTelaHome(String tipoConta) {
-        if ("usuario".equals(tipoConta)) {
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-        } else if("administrador".equals(tipoConta)){
-            startActivity(new Intent(LoginActivity.this, AdministradorActivity.class));
-        }
     }
 }

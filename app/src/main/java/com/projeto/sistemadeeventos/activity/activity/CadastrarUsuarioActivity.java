@@ -79,7 +79,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 }
 
                 String criptSenha = BCrypt.withDefaults().hashToString(12, senha.toCharArray());
-                user = new Usuario(nome, email, genero, telefone, criptSenha,tipoConta);
+                user = new Usuario(nome, email, genero, telefone, criptSenha, tipoConta);
 
                 if (nome.isEmpty() || telefone.isEmpty() || genero.isEmpty() || email.isEmpty()
                         || senha.isEmpty() || tipoConta.isEmpty()) {
@@ -88,7 +88,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                             "Todos os campos são obrigatórios!", Toast.LENGTH_LONG).show();
 
                 } else {
-                    cadastrarUsuario(user.getEmail(), user.getSenha());
+                    cadastrarUsuario(user.getEmail(), senha);
                 }
             }
         });

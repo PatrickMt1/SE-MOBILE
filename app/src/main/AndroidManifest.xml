@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SistemaDeEventos"
         tools:targetApi="31">
         <activity
+            android:name=".activity.activity.CadastroEventoActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.activity.AdministradorActivity"
             android:exported="false" />
         <activity

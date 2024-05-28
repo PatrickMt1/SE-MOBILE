@@ -13,36 +13,36 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.projeto.sistemadeeventos.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class CadastroEventoActivity extends AppCompatActivity {
 
-    private ImageView imgLogoutUsuario;
+    private ImageView imgVoltarHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_cadastro_evento);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        inicializarComponente();
+        inicializaComponente();
 
-        imgLogoutUsuario.setOnClickListener(new View.OnClickListener() {
+        imgVoltarHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirTelaLogin();
+                abrirTelaHome();
             }
         });
     }
 
-    private void inicializarComponente() {
-        imgLogoutUsuario = (ImageView) findViewById(R.id.imgLogoutCliente);
+    private void inicializaComponente() {
+        imgVoltarHome = (ImageView) findViewById(R.id.imgVolta);
     }
 
-    private void abrirTelaLogin() {
-        startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+    private void abrirTelaHome(){
+        startActivity(new Intent(this, AdministradorActivity.class));
         finish();
     }
 }

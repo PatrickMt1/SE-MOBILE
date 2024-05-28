@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEventos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imgVolta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/toolbarEventos"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@id/toolbarEventos"
+        app:layout_constraintTop_toTopOf="@id/toolbarEventos"
+        app:srcCompat="@drawable/ic_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/cadastroEventos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Cadastro de Eventos"
+        android:textColor="#F6F3F3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/toolbarEventos"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="@id/toolbarEventos"
+        app:layout_constraintTop_toTopOf="@id/toolbarEventos" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarEventos">
+
+        <TextView
+            android:id="@+id/Nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome do Evento"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o nome do evento"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Data"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a data do evento"
+            android:inputType="date"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Horario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Horário"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/horario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o horário do evento"
+            android:inputType="time"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Preco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Preço"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/preco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o preço do evento"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Local"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/local"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite o local do evento"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Imagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Imagem"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgEvento"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            tools:srcCompat="@drawable/logo" />
+
+        <Button
+            android:id="@+id/salvarEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Salvar Evento" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
