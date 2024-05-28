@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textNomeEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Nome do Evento"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textDataEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Data: 21/03/2025"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textHorarioEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="horario: 21:30"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textLocalEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Local: Asa Sul"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textPrecoEvento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="R$ 19.90"
+        android:textColor="#CC0018"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <include layout="@layout/divisor" />
+
+</LinearLayout>

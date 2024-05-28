@@ -74,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Login Efetuado com Sucesso!", Toast.LENGTH_LONG).show();
                                 recuperarUsuarioLogado();
-
                             } else {
                                 Toast.makeText(LoginActivity.this, "Error ao Efetuar Login!", Toast.LENGTH_LONG).show();
                             }

@@ -2,10 +2,12 @@ package com.projeto.sistemadeeventos.activity.config;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 
 public class FirebaseConfig {
     private static FirebaseFirestore firestore;
     private static FirebaseAuth auth;
+    private static FirebaseStorage storage;
 
     public static String getIdUsuario() {
         FirebaseAuth fireAuth = getAuth();
@@ -24,5 +26,12 @@ public class FirebaseConfig {
             auth = FirebaseAuth.getInstance();
         }
         return auth;
+    }
+
+    public static FirebaseStorage getStorage() {
+        if (storage == null) {
+            storage = FirebaseStorage.getInstance();
+        }
+        return storage;
     }
 }

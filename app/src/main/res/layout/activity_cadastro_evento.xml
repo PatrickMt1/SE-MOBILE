@@ -61,45 +61,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nome do Evento"
-            android:textSize="16sp" />
+            android:textColor="#6A6969"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/nome"
+            android:id="@+id/textNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
             android:hint="Digite o nome do evento"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/Data"
+            android:id="@+id/data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Data"
-            android:textSize="16sp" />
+            android:textColor="#6A6969"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/data"
+            android:id="@+id/textData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
             android:hint="Digite a data do evento"
-            android:inputType="date"
+            android:inputType="datetime"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/Horario"
+            android:id="@+id/horario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Horário"
-            android:textSize="16sp" />
+            android:textColor="#6A6969"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/horario"
+            android:id="@+id/textHorario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
             android:hint="Digite o horário do evento"
             android:inputType="time"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textSize="20sp" />
 
         <TextView
@@ -108,14 +123,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Preço"
-            android:textSize="16sp" />
+            android:textColor="#6A6969"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/preco"
+            android:id="@+id/textPrecoEvento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
             android:hint="Digite o preço do evento"
-            android:inputType="numberDecimal"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textSize="20sp" />
 
         <TextView
@@ -124,32 +144,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Local"
-            android:textSize="16sp" />
+            android:textColor="#6A6969"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/local"
+            android:id="@+id/textLocal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"
             android:hint="Digite o local do evento"
+            android:minHeight="48dp"
+            android:padding="8dp"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/Imagem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Imagem"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/imgEvento"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            tools:srcCompat="@drawable/logo" />
-
         <Button
-            android:id="@+id/salvarEvento"
+            android:id="@+id/btsalvarEvento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
